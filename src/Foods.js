@@ -20,29 +20,45 @@ const Foods = ({ foods }) => {
   });
 
   return (
-    <div>
+    <div className="foodapp">
       <h2>All Foods</h2>
-      <label htmlFor="foodTypeFilter">Filter by Food Type</label>
-      <select
-        id="foodTypeFilter"
-        value={foodTypeFilter}
-        onChange={handleFoodTypeFilterChange}
+      <div
+        className="input-group mb-3"
+        style={{ width: "50%", alignItems: "center" }}
       >
-        <option value="all">All</option>
-        <option value="Delicious Food">Delicious Food</option>
-        <option value="Nutritious Food">Nutritious Food</option>
-        <option value="Fast Food">Fast Food</option>
-        <option value="Beverages">Beverages</option>
-        <option value="Desserts">Desserts</option>
-      </select>
-      <label htmlFor="maxDeliveryTimeFilter">Filter by Max Delivery Time</label>
-      <input
-        type="number"
-        id="maxDeliveryTimeFilter"
-        value={maxDeliveryTimeFilter}
-        onChange={handleMaxDeliveryTimeFilterChange}
-      />
-      <ul>
+        <label htmlFor="foodTypeFilter" className="input-group-text">
+          Filter by Food Type
+        </label>
+        <select
+          style={{ height: "38px", width: "120px" }}
+          id="foodTypeFilter"
+          value={foodTypeFilter}
+          onChange={handleFoodTypeFilterChange}
+        >
+          <option value="all">All</option>
+          <option value="Delicious Food">Delicious Food</option>
+          <option value="Nutritious Food">Nutritious Food</option>
+          <option value="Fast Food">Fast Food</option>
+          <option value="Beverages">Beverages</option>
+          <option value="Desserts">Desserts</option>
+        </select>
+      </div>
+      <div
+        className="input-group mb-3"
+        style={{ width: "50%", alignItems: "center" }}
+      >
+        <label htmlFor="maxDeliveryTimeFilter" className="input-group-text">
+          Filter by Max Delivery Time
+        </label>
+        <input
+          className="form-control"
+          type="number"
+          id="maxDeliveryTimeFilter"
+          value={maxDeliveryTimeFilter}
+          onChange={handleMaxDeliveryTimeFilterChange}
+        />
+      </div>
+      <ul className="items">
         {filteredFoods.map((food, index) => (
           <li key={index}>
             <p>Food Name: {food.foodName}</p>

@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.foodapp {
+  display: flex;
+  border: 1px solid black;
+  flex-direction: column;
+  padding: 100px;
+  width: 60%;
+  margin-left: 25%;
+}
+
+.items {
+  border: 1px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.items li {
+  border: 1px solid black;
+  padding: 20px;
+  margin-left: 3%;
+}
